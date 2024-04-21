@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Prova - Jogo Herói e Vilão</title>
+    <link rel="stylesheet" href="style.css"> <!--Importação dos estilos do arquivo CSS-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!--Importação do Vue-->
+</head>
+<body>
+<div id="app"> 
+    <div class="personagem"> <!--Criação do escopo do herói-->
+        <div class="barra-vida" :style="{width: heroi.vida + '%'}">{{ heroi.vida }}%</div> <!--Barra de vida do herói-->
+        <div class="sprite"><img src = "https://i.imgur.com/lYbYNR0.gif"></div> <!--Entrada da imagem do herói-->
+        <h1>Herói</h1>
+        <div class="acoes"> <!--Declaração dos botões de ação-->
+            <button @click="atacar(true)">Atacar</button> <!--Chamada da função referente ao botão selecionado, passando true como parâmetro-->
+            <button @click="defender(true)">Defender</button> <!--Chamada da função referente ao botão selecionado, passando true como parâmetro-->
+            <button @click="pocao(true)">Usar Poção</button> <!--Chamada da função referente ao botão selecionado, passando true como parâmetro-->
+            <button @click="correr(true)">Correr</button> <!--Chamada da função referente ao botão selecionado, passando true como parâmetro-->
+        </div>
+    </div>
+
+    <div class="personagem" > <!--Criação do escopo do vilão-->
+        <div class="barra-vida" :style="{width: vilao.vida + '%'}">{{ vilao.vida }}%</div>  <!--Barra de vida do vilão-->
+        <div class="sprite"><img src = "https://i.imgur.com/LMvB1B1.png"></div> <!--Entrada da imagem do vilão-->
+        <h1>Vilão</h1>
+    </div>
+</div>
+</body>
+</html>
+<script src="index.js"></script> <!--Importação dos métodos do arquivo JS-->
